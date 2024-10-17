@@ -1,19 +1,19 @@
 
-export default async function Page() {
+// export default async function Page() {
 
-  return (<h1>FETCH</h1>)
-}
+//   return (<h1>FETCH</h1>)
+// }
 
 
-// import "../globals.css"
+import "../globals.css"
 
-// interface Props { 
-//           id: number,
-//           date: string;
-//           temperatureC: number;
-//           summary: string;
-//           temperatureF: number;
-//         }
+interface Props { 
+          id: number,
+          date: string;
+          temperatureC: number;
+          summary: string;
+          temperatureF: number;
+        }
 
 // async function loadData() {
 //   const res = await fetch('http://localhost:5064/weatherforecast');
@@ -22,58 +22,58 @@ export default async function Page() {
 //   return forecasts;
 // }
 
-// async function fetchdetails() {
+async function fetchdetails() {
 
-//     const response = await fetch(
-//       "http://localhost:5064/weatherforecast", {
-//         method: "GET"
-//       }
-//     );
+    const response = await fetch(
+      "https://asp-azure-sample-app-nextjs.azurewebsites.net/weatherforecast", {
+        method: "GET"
+      }
+    );
 
-//     if (response.ok) {
-//       const responseBody = await response.json();
-//       // console.log(`data ${data}`);
-//       // setData(responseBody);
-//       console.log(`data ${responseBody}`);
-//       return responseBody;
-//     }
-//   }
+    if (response.ok) {
+      const responseBody = await response.json();
+      // console.log(`data ${data}`);
+      // setData(responseBody);
+      console.log(`data ${responseBody}`);
+      return responseBody;
+    }
+  }
 
-// export default async function Page() {
+export default async function Page() {
 
-//   const data = await fetchdetails();
+  const data = await fetchdetails();
 
-//   return (
-//     <div>
-//       <h1>Weather Http</h1>
+  return (
+    <div>
+      <h1>Weather Http</h1>
 
-//               <table className="weather-forecast-table">
+              <table className="weather-forecast-table">
 
-//             <thead>
-//        <tr>
-//          <th className="forecast-id">Id</th>
-//           <th className="forecast-date">Date</th>
-//           <th className="forecast-tempratureC">TemperatureC</th>
-//            <th className="forecast-summary">Summary</th>
-//            <th className="forecast-temperatureF">TemperatureF</th>
-//          </tr>
-//          </thead>
-//         <tbody>
+            <thead>
+       <tr>
+         <th className="forecast-id">Id</th>
+          <th className="forecast-date">Date</th>
+          <th className="forecast-tempratureC">TemperatureC</th>
+           <th className="forecast-summary">Summary</th>
+           <th className="forecast-temperatureF">TemperatureF</th>
+         </tr>
+         </thead>
+        <tbody>
 
-//         {data.map((forecast: Props) => (
+        {data.map((forecast: Props) => (
  
-//              <tr key={forecast.id}>
-//                  <td className="forecast-id">{forecast.id}</td>
-//                  <td className="forecast-date">{forecast.date}</td>
-//                  <td className="forecast-tempratureC">{forecast.temperatureC}</td>
-//                  <td className="forecast-summary">{forecast.summary}</td>
-//                  <td className="forecast-temperatureF">{forecast.temperatureF}</td>
-//              </tr> 
-//          ))}
+             <tr key={forecast.id}>
+                 <td className="forecast-id">{forecast.id}</td>
+                 <td className="forecast-date">{forecast.date}</td>
+                 <td className="forecast-tempratureC">{forecast.temperatureC}</td>
+                 <td className="forecast-summary">{forecast.summary}</td>
+                 <td className="forecast-temperatureF">{forecast.temperatureF}</td>
+             </tr> 
+         ))}
 
        
-//          </tbody>
-//        </table>  
+         </tbody>
+       </table>  
 
 
 //       {/* <ul>
@@ -88,9 +88,10 @@ export default async function Page() {
 //           <li key={post.id}>{post.title}</li>
 //         ))}
 //       </ul> */}
-//     </div>
-//   );
-// }
+      
+     </div>
+   );
+ }
 
 
 
