@@ -15,13 +15,7 @@ interface Props {
           temperatureF: number;
         }
 
-// async function loadData() {
-//   const res = await fetch('http://localhost:5064/weatherforecast');
-//   const forecasts = await res.json();
-
-//   return forecasts;
-// }
-
+  
 async function fetchdetails() {
 
     const response = await fetch(
@@ -69,26 +63,10 @@ export default async function Page() {
                  <td className="forecast-summary">{forecast.summary}</td>
                  <td className="forecast-temperatureF">{forecast.temperatureF}</td>
              </tr> 
-         ))}
-
-       
+         ))} 
+                  
          </tbody>
-       </table>  
-
-
-//       {/* <ul>
-//         {data.map((forecast: Props) => (
-//           <li key={forecast.summary}>{forecast.date}</li>
-//         ))}
-//       </ul> */}
-
-
-//       {/* <ul>
-//         {forecasts.map((forecast) => (
-//           <li key={post.id}>{post.title}</li>
-//         ))}
-//       </ul> */}
-      
+       </table>   
      </div>
    );
  }
