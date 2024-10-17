@@ -7,15 +7,16 @@ import { IForecast }  from "../weather-http/types"
 
 export default function Page() { 
  
-  const [dataFromChild, setDataFromChild] =  useState<IForecast[]>([]);
+  const [forecasts, setForecasts] =  useState<IForecast[]>([]);
 
-  function handleDataFromChild(data : IForecast[]) {
-    setDataFromChild(data);
+  function handleForecastsFromButton(data : IForecast[]) {
+    setForecasts(data);
   }
 
   return (
     <div>    
-      <GetForecastDataButton sendDataToParent={handleDataFromChild}></GetForecastDataButton>      
-      <Forecasts forecasts={dataFromChild} />    
+      <GetForecastDataButton forecasts={handleForecastsFromButton}></GetForecastDataButton>      
+      <Forecasts forecasts={forecasts} />    
     </div>
-);} 
+  );
+}

@@ -7,7 +7,7 @@ export default function RootLayout({
     <html lang="en">
       <body>
         {/* Layout UI */}
-        <h1>App Layout</h1>
+        <h1>Next Js Examples</h1>
         <main>{children}</main>
       </body>
     </html>
