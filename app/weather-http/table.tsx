@@ -5,7 +5,7 @@ type ForecastsProps = {
 };
 
 export default function Forecasts( forecasts: ForecastsProps ) {
-
+ 
 return (
     <div> 
       {forecasts && (

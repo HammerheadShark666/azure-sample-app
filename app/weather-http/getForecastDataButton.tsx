@@ -10,7 +10,7 @@ export default function GetForecastDataButton({forecasts} : ForecastsProps ) {
   const handleClick = () => {
 
     const fetchData = async () => {
-      const res = await fetch('https://asp-azure-sample-app-nextjs.azurewebsites.net/weatherforecast'); //http://localhost:5064/weatherforecast
+      const res = await fetch('http://localhost:5064/weatherforecast'); // https://asp-azure-sample-app-nextjs.azurewebsites.net/weatherforecast
       forecasts(await res.json());
     };
     
